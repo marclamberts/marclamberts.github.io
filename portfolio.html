@@ -3,8 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | My GitHub Page</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Portfolio | Marc Lamberts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #fff;
+      color: #222;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      border-bottom: 2px solid #eee;
+      background-color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      text-decoration: none;
+      color: #000;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #e36f1e;
+    }
+    main {
+      max-width: 700px;
+      margin: 4rem auto;
+      text-align: left;
+      padding: 0 1rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      color: #333;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      max-width: 600px;
+      margin: 1.2rem auto;
+    }
+    ul {
+      margin: 1rem auto;
+      max-width: 600px;
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #e36f1e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,7 +85,56 @@
 
   <main>
     <h1>Portfolio</h1>
-    <p>Here you’ll find examples of my recent work, projects, and creative experiments.</p>
+
+    <p>
+      Below are some highlights of my work in football scouting, recruitment and analysis — from operational roles within clubs to independent data-driven projects.  
+      I’ve worked across men’s and women’s football, applying a blend of video, data and tactical insight to support talent identification, opposition analysis and recruitment workflows.
+    </p>
+
+    <h2>Clubs & Roles</h2>
+    <ul>
+      <li>
+        <strong>London City Lionesses</strong> – Recruitment Analyst Intern. Joined the club in April 2022 after earlier roles in the Dutch men’s game and Swedish women’s top division. :contentReference[oaicite:1]{index=1}
+      </li>
+      <li>
+        <strong>VVV‑Venlo</strong> – Recruitment / Data Analysis contributor within the Dutch men’s professional system (previous role referenced in the London City announcement). :contentReference[oaicite:3]{index=3}
+      </li>
+      <li>
+        <strong>Linköping FC</strong> – Opposition Scout / Analyst in the Swedish women’s top division. :contentReference[oaicite:5]{index=5}
+      </li>
+      <li>
+        <strong>KNVB</strong> (Royal Netherlands Football Association) – Earlier work affiliation, as referenced in my profile. :contentReference[oaicite:7]{index=7}
+      </li>
+    </ul>
+
+    <h2>Selected Projects & Analysis Work</h2>
+    <p>
+      Some independent or club-adjacent work I’ve completed:
+    </p>
+    <ul>
+      <li>
+        Set-Piece Value Model – Developed a metric to quantify the impact of corners and free-kicks in elite women’s football.  
+      </li>
+      <li>
+        Emerging Talent Shortlist Pipeline – Designed and executed a workflow combining Wyscout/FBref data and video scouting for U23 attackers in the English Women’s Championship.  
+      </li>
+      <li>
+        Opposition Snapshot Series – Created tactical and data reports for upcoming opponents in the Swedish Damallsvenskan, combining pressing profiles, transition threat and expected goals data in both video and slide format.  
+      </li>
+    </ul>
+
+    <h2>What I Bring to the Table</h2>
+    <p>
+      • A hybrid skill-set: video scouting, data modelling, tactical understanding.  
+      <br>
+      • Experience across different markets and contexts (NL, SE, UK; men’s & women’s).  
+      <br>
+      • A focus on actionable insight: not just numbers, but what they mean for recruitment, squad building, and match preparation.  
+    </p>
+
+    <p>
+      If you’d like to explore how we can collaborate, check out the <a href="contact.html">Work With Me</a> page or drop me a message directly.
+    </p>
   </main>
 
 </body>
