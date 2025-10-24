@@ -12,6 +12,7 @@
       color: #222;
     }
 
+    /* Navigation Bar */
     nav {
       display: flex;
       justify-content: center;
@@ -21,6 +22,9 @@
       background-color: #fff;
       font-weight: 700;
       letter-spacing: 0.05em;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
@@ -32,9 +36,10 @@
 
     nav a:hover,
     nav a.active {
-      color: #e36f1e;
+      color: #e36f1e; /* FiveThirtyEight orange accent */
     }
 
+    /* Main Content */
     main {
       max-width: 700px;
       margin: 4rem auto;
@@ -49,13 +54,25 @@
 
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.8;
       color: #555;
+      max-width: 600px;
+      margin: 1.2rem auto;
+    }
+
+    a {
+      color: #e36f1e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation Menu -->
   <nav>
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
@@ -63,9 +80,26 @@
     <a href="contact.html">Work with me</a>
   </nav>
 
+  <!-- Home Page Content -->
   <main>
-    <h1>Hello, world! 👋</h1>
-    <p>Welcome to my personal GitHub Pages site, built in a simple FiveThirtyEight-inspired style.</p>
+    <h1>Welcome to My Site</h1>
+    <p>
+      I’m a curious mind who loves exploring how data, design, and storytelling intersect.
+      This site is where I share my work, experiments, and ideas — inspired by the clarity and depth
+      of places like <strong>FiveThirtyEight</strong>.
+    </p>
+
+    <p>
+      Whether I’m building a visualization, writing about an idea, or analyzing patterns,
+      I’m always looking for better ways to understand the world through numbers and narrative.
+    </p>
+
+    <p>
+      Take a look around:
+      learn more <a href="about.html">about me</a>,
+      see what I’ve been <a href="portfolio.html">working on</a>,
+      or <a href="contact.html">get in touch</a> if you’d like to collaborate.
+    </p>
   </main>
 
 </body>
