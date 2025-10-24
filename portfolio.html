@@ -11,6 +11,7 @@
       background-color: #fff;
       color: #222;
     }
+
     nav {
       display: flex;
       justify-content: center;
@@ -24,51 +25,88 @@
       top: 0;
       z-index: 10;
     }
+
     nav a {
       text-decoration: none;
       color: #000;
       text-transform: uppercase;
       transition: color 0.2s ease;
     }
+
     nav a:hover,
     nav a.active {
       color: #e36f1e;
     }
+
     main {
-      max-width: 700px;
+      max-width: 900px;
       margin: 4rem auto;
-      text-align: left;
       padding: 0 1rem;
     }
+
     h1 {
+      text-align: center;
       font-size: 2.25rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-      margin-bottom: 0.6rem;
+
+    p.intro {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      background-color: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      background-color: #fafafa;
+      padding: 1rem;
+    }
+
+    .card-content {
+      padding: 1.2rem;
+    }
+
+    .card-content h2 {
+      font-size: 1.3rem;
+      margin: 0 0 0.6rem;
       color: #333;
     }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.8;
+
+    .card-content p {
+      font-size: 0.95rem;
       color: #555;
-      max-width: 600px;
-      margin: 1.2rem auto;
+      line-height: 1.6;
     }
-    ul {
-      margin: 1rem auto;
-      max-width: 600px;
-      padding-left: 1.2rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
+
     a {
       color: #e36f1e;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -85,56 +123,54 @@
 
   <main>
     <h1>Portfolio</h1>
-
-    <p>
-      Below are some highlights of my work in football scouting, recruitment and analysis — from operational roles within clubs to independent data-driven projects.  
-      I’ve worked across men’s and women’s football, applying a blend of video, data and tactical insight to support talent identification, opposition analysis and recruitment workflows.
+    <p class="intro">
+      A selection of clubs and projects I’ve contributed to — from data-led scouting and opposition
+      analysis to recruitment strategy and workflow design.
     </p>
 
-    <h2>Clubs & Roles</h2>
-    <ul>
-      <li>
-        <strong>London City Lionesses</strong> – Recruitment Analyst Intern. Joined the club in April 2022 after earlier roles in the Dutch men’s game and Swedish women’s top division. :contentReference[oaicite:1]{index=1}
-      </li>
-      <li>
-        <strong>VVV‑Venlo</strong> – Recruitment / Data Analysis contributor within the Dutch men’s professional system (previous role referenced in the London City announcement). :contentReference[oaicite:3]{index=3}
-      </li>
-      <li>
-        <strong>Linköping FC</strong> – Opposition Scout / Analyst in the Swedish women’s top division. :contentReference[oaicite:5]{index=5}
-      </li>
-      <li>
-        <strong>KNVB</strong> (Royal Netherlands Football Association) – Earlier work affiliation, as referenced in my profile. :contentReference[oaicite:7]{index=7}
-      </li>
-    </ul>
+    <div class="grid">
 
-    <h2>Selected Projects & Analysis Work</h2>
-    <p>
-      Some independent or club-adjacent work I’ve completed:
-    </p>
-    <ul>
-      <li>
-        Set-Piece Value Model – Developed a metric to quantify the impact of corners and free-kicks in elite women’s football.  
-      </li>
-      <li>
-        Emerging Talent Shortlist Pipeline – Designed and executed a workflow combining Wyscout/FBref data and video scouting for U23 attackers in the English Women’s Championship.  
-      </li>
-      <li>
-        Opposition Snapshot Series – Created tactical and data reports for upcoming opponents in the Swedish Damallsvenskan, combining pressing profiles, transition threat and expected goals data in both video and slide format.  
-      </li>
-    </ul>
+      <!-- London City Lionesses -->
+      <div class="card">
+        <img src="londoncitylionesses.png" alt="London City Lionesses logo">
+        <div class="card-content">
+          <h2>London City Lionesses</h2>
+          <p>Recruitment Analyst Intern — supporting player scouting, opposition reports,
+             and performance data processes in the FA Women’s Championship.</p>
+        </div>
+      </div>
 
-    <h2>What I Bring to the Table</h2>
-    <p>
-      • A hybrid skill-set: video scouting, data modelling, tactical understanding.  
-      <br>
-      • Experience across different markets and contexts (NL, SE, UK; men’s & women’s).  
-      <br>
-      • A focus on actionable insight: not just numbers, but what they mean for recruitment, squad building, and match preparation.  
-    </p>
+      <!-- VVV-Venlo -->
+      <div class="card">
+        <img src="vvvvenlo.png" alt="VVV-Venlo logo">
+        <div class="card-content">
+          <h2>VVV-Venlo</h2>
+          <p>Scouting and data analysis within the Dutch men’s system — integrating
+             recruitment data insights into player identification processes.</p>
+        </div>
+      </div>
 
-    <p>
-      If you’d like to explore how we can collaborate, check out the <a href="contact.html">Work With Me</a> page or drop me a message directly.
-    </p>
+      <!-- Linköping FC -->
+      <div class="card">
+        <img src="linkoping.png" alt="Linköping FC logo">
+        <div class="card-content">
+          <h2>Linköping FC</h2>
+          <p>Opposition scout and analyst in the Swedish Damallsvenskan — creating
+             tactical breakdowns and data reports to support match preparation.</p>
+        </div>
+      </div>
+
+      <!-- KNVB -->
+      <div class="card">
+        <img src="knvb.png" alt="KNVB logo">
+        <div class="card-content">
+          <h2>KNVB</h2>
+          <p>Work with the Royal Netherlands Football Association in analytical
+             support and scouting methodology projects.</p>
+        </div>
+      </div>
+
+    </div>
   </main>
 
 </body>
