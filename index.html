@@ -3,24 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to My GitHub Page</title>
+  <title>My GitHub Page</title>
   <style>
     body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 50px;
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       background-color: #f9f9f9;
-    }
-    h1 {
       color: #333;
     }
+
+    /* --- Navigation Bar --- */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 700;
+      margin: 0 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #e56a54; /* FiveThirtyEight orange tone */
+    }
+
+    /* --- Page Content --- */
+    .content {
+      max-width: 800px;
+      margin: 3rem auto;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
     p {
-      color: #666;
+      color: #555;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <h1>Hello, world! 👋</h1>
-  <p>This is my first GitHub Pages site.</p>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#work">Work with Me</a>
+  </nav>
+
+  <div class="content">
+    <h1>Welcome to My Site</h1>
+    <p>This is a simple personal site inspired by FiveThirtyEight’s style — clean, bold, and minimal.</p>
+  </div>
+
+  <section id="about" class="content">
+    <h1>About</h1>
+    <p>Write a short description about yourself here.</p>
+  </section>
+
+  <section id="portfolio" class="content">
+    <h1>Portfolio</h1>
+    <p>Showcase your projects or work here.</p>
+  </section>
+
+  <section id="work" class="content">
+    <h1>Work with Me</h1>
+    <p>Include contact info or a form link here.</p>
+  </section>
+
 </body>
 </html>
