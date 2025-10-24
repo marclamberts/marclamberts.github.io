@@ -3,89 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Page</title>
+  <title>Home | My GitHub Page</title>
   <style>
     body {
       margin: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #fff;
+      color: #222;
     }
 
-    /* --- Navigation Bar --- */
     nav {
       display: flex;
       justify-content: center;
-      align-items: center;
-      background-color: white;
-      border-bottom: 1px solid #ddd;
+      gap: 2rem;
       padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      border-bottom: 2px solid #eee;
+      background-color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.05em;
     }
 
     nav a {
       text-decoration: none;
-      color: #222;
-      font-weight: 700;
-      margin: 0 1.5rem;
+      color: #000;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
       transition: color 0.2s ease;
     }
 
-    nav a:hover {
-      color: #e56a54; /* FiveThirtyEight orange tone */
+    nav a:hover,
+    nav a.active {
+      color: #e36f1e;
     }
 
-    /* --- Page Content --- */
-    .content {
-      max-width: 800px;
-      margin: 3rem auto;
+    main {
+      max-width: 700px;
+      margin: 4rem auto;
       text-align: center;
       padding: 0 1rem;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
     p {
-      color: #555;
+      font-size: 1.1rem;
       line-height: 1.6;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#work">Work with Me</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Work with me</a>
   </nav>
 
-  <div class="content">
-    <h1>Welcome to My Site</h1>
-    <p>This is a simple personal site inspired by FiveThirtyEight’s style — clean, bold, and minimal.</p>
-  </div>
-
-  <section id="about" class="content">
-    <h1>About</h1>
-    <p>Write a short description about yourself here.</p>
-  </section>
-
-  <section id="portfolio" class="content">
-    <h1>Portfolio</h1>
-    <p>Showcase your projects or work here.</p>
-  </section>
-
-  <section id="work" class="content">
-    <h1>Work with Me</h1>
-    <p>Include contact info or a form link here.</p>
-  </section>
+  <main>
+    <h1>Hello, world! 👋</h1>
+    <p>Welcome to my personal GitHub Pages site, built in a simple FiveThirtyEight-inspired style.</p>
+  </main>
 
 </body>
 </html>
