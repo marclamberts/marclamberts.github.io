@@ -3,8 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work With Me | My GitHub Page</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Work With Me | Marc Lamberts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #fff;
+      color: #222;
+    }
+
+    /* Navigation bar */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      border-bottom: 2px solid #eee;
+      background-color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #e36f1e;
+    }
+
+    /* Page layout */
+    main {
+      max-width: 700px;
+      margin: 4rem auto;
+      text-align: left;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      max-width: 600px;
+      margin: 1.2rem auto;
+    }
+
+    a {
+      color: #e36f1e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-box {
+      text-align: center;
+      border: 2px solid #eee;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 3rem auto;
+      max-width: 500px;
+      background-color: #fafafa;
+    }
+
+    .contact-box a.button {
+      display: inline-block;
+      background-color: #e36f1e;
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: background-color 0.2s ease;
+    }
+
+    .contact-box a.button:hover {
+      background-color: #c95e17;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,7 +108,35 @@
 
   <main>
     <h1>Work With Me</h1>
-    <p>If you’d like to collaborate or reach out, you can contact me at <a href="mailto:your@email.com">your@email.com</a>.</p>
+
+    <p>
+      I collaborate with clubs, agencies and data-driven organisations in football,
+      focusing on player recruitment, performance analysis, and building processes that
+      connect video and data scouting.
+    </p>
+
+    <p>
+      My background spans multiple football environments — from the Dutch men’s leagues to
+      the Swedish and English women’s top divisions.  
+      I bring a structured, evidence-based approach to identifying talent and optimising recruitment pipelines.
+    </p>
+
+    <p>
+      If you’re looking to strengthen your scouting operations, design analytical tools, or
+      explore strategic collaboration in football analysis, I’d love to hear from you.
+    </p>
+
+    <div class="contact-box">
+      <p>📧 Get in touch directly:</p>
+      <a href="mailto:marclamberts@outlook.com" class="button">Email Me</a>
+    </div>
+
+    <p style="text-align:center;">
+      You can also connect via
+      <a href="https://www.linkedin.com/in/marclamberts/?utm_source=chatgpt.com" target="_blank">LinkedIn</a>
+      or read my work on
+      <a href="https://marclamberts.medium.com/?utm_source=chatgpt.com" target="_blank">Medium</a>.
+    </p>
   </main>
 
 </body>
