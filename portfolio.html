@@ -12,6 +12,7 @@
       color: #222;
     }
 
+    /* Navigation Bar */
     nav {
       display: flex;
       justify-content: center;
@@ -38,8 +39,9 @@
       color: #e36f1e;
     }
 
+    /* Layout */
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 4rem auto;
       padding: 0 1rem;
     }
@@ -58,9 +60,10 @@
       line-height: 1.7;
     }
 
+    /* Card grid */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
     }
 
@@ -80,7 +83,7 @@
 
     .card img {
       width: 100%;
-      height: 160px;
+      height: 150px;
       object-fit: contain;
       background-color: #fafafa;
       padding: 1rem;
@@ -91,7 +94,7 @@
     }
 
     .card-content h2 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin: 0 0 0.6rem;
       color: #333;
     }
@@ -114,6 +117,7 @@
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -121,11 +125,12 @@
     <a href="contact.html">Work with me</a>
   </nav>
 
+  <!-- Main Content -->
   <main>
     <h1>Portfolio</h1>
     <p class="intro">
-      A selection of clubs and projects I’ve contributed to — from data-led scouting and opposition
-      analysis to recruitment strategy and workflow design.
+      A selection of my professional experience and analytical work across clubs and organisations,
+      spanning scouting, opposition analysis, and data engineering roles in both men’s and women’s football.
     </p>
 
     <div class="grid">
@@ -145,8 +150,8 @@
         <img src="vvvvenlo.png" alt="VVV-Venlo logo">
         <div class="card-content">
           <h2>VVV-Venlo</h2>
-          <p>Scouting and data analysis within the Dutch men’s system — integrating
-             recruitment data insights into player identification processes.</p>
+          <p>Scouting and data analysis within the Dutch men’s professional system — integrating
+             data insights into player identification and recruitment workflows.</p>
         </div>
       </div>
 
@@ -162,16 +167,65 @@
 
       <!-- KNVB -->
       <div class="card">
-        <img src="knvb.svg" alt="KNVB logo">
+        <img src="knvb.png" alt="KNVB logo">
         <div class="card-content">
           <h2>KNVB</h2>
-          <p>Work with the Royal Netherlands Football Association in analytical
-             support and scouting methodology projects.</p>
+          <p>Contributed to scouting methodology and data-driven analysis
+             with the Royal Netherlands Football Association.</p>
+        </div>
+      </div>
+
+      <!-- Slavia Prague -->
+      <div class="card">
+        <img src="slaviaprague.png" alt="Slavia Prague logo">
+        <div class="card-content">
+          <h2>Slavia Prague</h2>
+          <p>Data Engineer — building analytical tools and visualizations to support
+             recruitment and performance workflows in top-flight European football.</p>
+        </div>
+      </div>
+
+      <!-- KAA Gent -->
+      <div class="card">
+        <img src="kaagent.png" alt="KAA Gent logo">
+        <div class="card-content">
+          <h2>KAA Gent</h2>
+          <p>Scouting Analyst — responsible for integrating data models into player
+             recruitment and opposition analysis within the Belgian Pro League.</p>
+        </div>
+      </div>
+
+      <!-- DC United -->
+      <div class="card">
+        <img src="dcunited.png" alt="DC United logo">
+        <div class="card-content">
+          <h2>D.C. United</h2>
+          <p>Scouting Analyst — delivering scouting and data insights to support
+             recruitment strategy and performance evaluation in MLS.</p>
+        </div>
+      </div>
+
+      <!-- Charlotte FC -->
+      <div class="card">
+        <img src="charlottefc.png" alt="Charlotte FC logo">
+        <div class="card-content">
+          <h2>Charlotte FC</h2>
+          <p>Opposition Analyst — producing pre-match analysis, tactical reports, and
+             opposition data profiles to inform match preparation in Major League Soccer.</p>
+        </div>
+      </div>
+
+      <!-- USC -->
+      <div class="card">
+        <img src="usc.png" alt="University of Southern California logo">
+        <div class="card-content">
+          <h2>University of Southern California</h2>
+          <p>Data Analyst — supporting player performance analytics and research projects
+             within collegiate-level football environments.</p>
         </div>
       </div>
 
     </div>
   </main>
-
 </body>
 </html>
