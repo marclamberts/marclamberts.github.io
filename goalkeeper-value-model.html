@@ -6,72 +6,77 @@
   <title>Goalkeeper Value Model | My GitHub Page</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: #fff;
-      color: #222;
+    :root{
+      --accent:#e36f1e;
+      --text:#222;
+      --muted:#555;
+      --line:#eee;
+      --bg:#fff;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.8rem;
-      padding: 1rem;
-      border-bottom: 2px solid #eee;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      position: sticky;
-      top: 0;
-      background: #fff;
-      z-index: 10;
+    body{
+      margin:0;
+      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
     }
 
-    nav a {
-      text-decoration: none;
-      color: #000;
-      text-transform: uppercase;
-      font-size: 0.85rem;
+    nav{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:1.8rem;
+      padding:1rem;
+      border-bottom:2px solid var(--line);
+      font-weight:700;
+      letter-spacing:.05em;
+      position:sticky;
+      top:0;
+      background:#fff;
+      z-index:10;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#000;
+      text-transform:uppercase;
+      font-size:.85rem;
     }
 
     nav a:hover,
-    nav a.active {
-      color: #e36f1e;
+    nav a.active{ color:var(--accent); }
+
+    main{
+      max-width:900px;
+      margin:3rem auto 5rem;
+      padding:0 1rem;
     }
 
-    main {
-      max-width: 900px;
-      margin: 3rem auto 5rem;
-      padding: 0 1rem;
+    h1{ font-size:2.5rem; margin-bottom:.5rem; }
+    h2{ margin-top:2.6rem; font-size:1.6rem; }
+    h3{ margin-top:1.6rem; font-size:1.25rem; }
+
+    p, li{
+      font-size:1.05rem;
+      line-height:1.9;
+      color:var(--muted);
     }
 
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
+    ul{ padding-left:1.2rem; }
+
+    .formula{
+      background:#fafafa;
+      border-left:4px solid var(--accent);
+      padding:1rem;
+      margin:1.5rem 0;
+      font-weight:600;
+      color:#000;
     }
 
-    h2 {
-      margin-top: 2.5rem;
-      font-size: 1.5rem;
-    }
-
-    p, li {
-      font-size: 1.05rem;
-      line-height: 1.9;
-      color: #555;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    .formula {
-      background: #fafafa;
-      padding: 1rem;
-      border-left: 4px solid #e36f1e;
-      margin: 1.5rem 0;
-      font-weight: 600;
+    .image-note{
+      font-style:italic;
+      color:#888;
+      margin:1rem 0;
     }
   </style>
 </head>
@@ -91,106 +96,129 @@
 
 <main>
 
-  <h1>Goalkeeper Value Model (GVM)</h1>
+<h1>Creating an Actionable Goalkeeper Value Model (GVM)</h1>
 
-  <p>
-    Most goalkeeper metrics focus almost exclusively on shot-stopping. Saves, save percentage,
-    post-shot xG minus goals conceded — all valuable, but incomplete. A goalkeeper’s influence on a
-    match starts long before a shot is taken and continues long after.
-  </p>
+<p>
+I am a very chaotic person by nature, and I need structure to make sure everything works right.
+When the structure isn’t good enough, projects stay on the shelf for a long time.
+One of those projects was the Goalkeeper Value Model. Not anymore.
+</p>
 
-  <p>
-    The Goalkeeper Value Model is designed to measure the total impact a goalkeeper has on
-    preventing and creating threat using only event data. It evaluates how a goalkeeper changes
-    the probability landscape of a possession through distribution, positioning, sweeping actions,
-    handling, and shot-stopping.
-  </p>
+<p>
+Goalkeeping data is not as available in mainstream data sources. More importantly,
+goalkeeping is harder to measure with on-ball data because much of the role is technical,
+positional, and preventative rather than reactive. Media focuses on how goals are scored,
+not how they are prevented. This model is my contribution to changing that.
+</p>
 
-  <h2>1. Data</h2>
+<h2>Introduction</h2>
 
-  <p>
-    The model uses raw Opta/StatsPerform event data with XY coordinates and qualifiers.
-    Only goalkeepers with sufficient minutes are evaluated to ensure stability in the metrics.
-  </p>
+<p>
+Goalkeepers are often evaluated only through shot-stopping metrics linked to attacking data.
+But goalkeeping includes distribution, leaving the line, reflexes, ball handling, sweeping,
+and set piece control. With the right distinctions, we can build meaningful goalkeeper metrics.
+</p>
 
-  <h2>2. Core Idea</h2>
+<h2>Data Collection, Manipulation and Explainer</h2>
 
-  <p>
-    Every goalkeeper action changes the likelihood that a team will concede or create danger.
-    Using an expected threat grid, we measure how much each action increases or decreases
-    this threat.
-  </p>
+<p>
+The data used is Opta/StatsPerform event data from the 2024–2025 Serie A season,
+collected on August 18th, 2025.
+</p>
 
-  <div class="formula">
-    Goalkeeper Value = Threat Before Action − Threat After Action
-  </div>
+<p>
+Working with Opta data requires extracting endX and endY from qualifiers.
+Events and qualifiers are essential for correctly mapping goalkeeper actions.
+Only goalkeepers with a minimum of 900 minutes are included for analysis stability.
+</p>
 
-  <p>
-    Positive values indicate actions that reduce danger. Negative values indicate actions that
-    increase opponent threat.
-  </p>
+<h2>Aim</h2>
 
-  <h2>3. Performance Phases</h2>
+<p>
+The aim is to show how on-ball event data can be used to distinguish goalkeeper performance
+categories and create a model that gives a clear overview of performance per match or season.
+</p>
 
-  <p>The model separates goalkeeper performance into five measurable phases:</p>
+<h2>Theory — Five Performance Scores</h2>
 
-  <ul>
-    <li><strong>Shot-stopping</strong> — value gained from preventing goals and controlling rebounds.</li>
-    <li><strong>Distribution</strong> — value from moving the ball into more threatening areas for the team.</li>
-    <li><strong>Leaving the line</strong> — sweeping actions and proactive interventions.</li>
-    <li><strong>Ball handling</strong> — secure claims versus spills that create danger.</li>
-    <li><strong>Set piece involvement</strong> — influence during defensive set-piece situations.</li>
-  </ul>
+<ul>
+  <li>Shot-stopping</li>
+  <li>Leaving the line</li>
+  <li>Distribution</li>
+  <li>Ball handling</li>
+  <li>Set piece involvement</li>
+</ul>
 
-  <h2>4. Methodology</h2>
+<p>
+Each action is assigned to one of these categories and given a value.
+These scores form the features of the final model.
+</p>
 
-  <p>
-    For each goalkeeper event, we map the start and end location onto an expected threat grid.
-    The difference between the two becomes the event value.
-  </p>
+<h2>Methodology — Threat-Based Value Model</h2>
 
-  <p>
-    These values are aggregated per phase and normalized by event counts to avoid volume bias.
-  </p>
+<p>
+A custom expected threat grid assigns value to every pitch location.
+Each goalkeeper action changes this value.
+</p>
 
-  <h2>5. Aggregation</h2>
+<div class="formula">
+Event Value = Threat Before Action − Threat After Action
+</div>
 
-  <p>
-    Phase scores are combined into a composite score that reflects overall goalkeeper impact.
-    This can be applied on a match, season, or career level.
-  </p>
+<h3>Shot-Stopping</h3>
+<p>Clean saves score higher than rebounds. Goals conceded are heavily penalised.</p>
 
-  <div class="formula">
-    GVM Score = Weighted Sum of Phase Values → Normalized to 0–100 scale
-  </div>
+<h3>Distribution</h3>
+<p>Forward progressive passes increase value. Turnovers decrease value.</p>
 
-  <h2>6. What This Reveals</h2>
+<h3>Leaving the Line</h3>
+<p>Sweeping and cross claims are valued by the danger they remove.</p>
 
-  <p>
-    This model highlights goalkeeper qualities that traditional metrics miss:
-  </p>
+<h3>Ball Handling</h3>
+<p>Secure control is rewarded. Spills and rebounds are penalised.</p>
 
-  <ul>
-    <li>Which goalkeepers actively improve team build-up</li>
-    <li>Which goalkeepers prevent danger before shots occur</li>
-    <li>Which goalkeepers create problems with poor handling or distribution</li>
-    <li>How different goalkeepers profile stylistically</li>
-  </ul>
+<h2>Final Product</h2>
 
-  <h2>7. Applications</h2>
+<p>
+Event values are normalised per phase and combined into a composite match score.
+</p>
 
-  <p>
-    The model can be visualised through heatmaps, event maps, and phase scorecards to
-    identify strengths, weaknesses, and tactical fit.
-  </p>
+<div class="formula">
+S = B + ωssV̄ss + ωdistV̄dist + ωllV̄ll + ωbhV̄bh
+</div>
 
-  <h2>Final Thoughts</h2>
+<p>
+This produces a 0–100 match score and several key visualisations:
+</p>
 
-  <p>
-    Goalkeeping is not a single-skill role. By quantifying how goalkeepers influence threat
-    throughout possessions, the Goalkeeper Value Model provides a more complete evaluation
-    of performance using only event data.
-  </p>
+<ul>
+  <li>Half-pitch heatmaps</li>
+  <li>Event point maps</li>
+  <li>Worst 10 distribution plot</li>
+  <li>Detailed scorecard and Excel report</li>
+</ul>
+
+<h2>Analysis</h2>
+
+<p class="image-note">[Image: Worst distribution plot example]</p>
+
+<p>
+Shows the lowest-value goalkeeper passes in a match, revealing actionable patterns.
+</p>
+
+<p class="image-note">[Image: Goalkeeper scorecard example]</p>
+
+<p>
+The scorecard includes match score, phase scores, distribution profile,
+timeflow score, phase impact, and WAR%.
+</p>
+
+<h2>Final Thoughts</h2>
+
+<p>
+This model provides actionable insight into goalkeeper performance across matches
+and is the foundation for further refinement and packaging into a Python toolkit.
+</p>
 
 </main>
 
