@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expected Shot Danger | My GitHub Page</title>
+
+  <style>
+    :root{
+      --accent:#e36f1e;
+      --text:#222;
+      --muted:#555;
+      --line:#eee;
+      --bg:#fff;
+      --code:#111;
+      --codebg:#fafafa;
+    }
+
+    body{
+      margin:0;
+      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    /* Navigation */
+    nav{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:1.8rem;
+      padding:1rem;
+      border-bottom:2px solid var(--line);
+      background:#fff;
+      font-weight:700;
+      letter-spacing:.05em;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#000;
+      text-transform:uppercase;
+      transition:color .2s ease;
+      font-size:.85rem;
+      white-space:nowrap;
+    }
+
+    nav a:hover,
+    nav a.active{
+      color:var(--accent);
+    }
+
+    /* Page */
+    main{
+      max-width:900px;
+      margin:3.5rem auto 5rem;
+      padding:0 1rem;
+    }
+
+    header{
+      margin-bottom:2rem;
+    }
+
+    h1{
+      font-size:2.35rem;
+      margin:0 0 .75rem 0;
+      letter-spacing:-.01em;
+    }
+
+    .sub{
+      color:var(--muted);
+      line-height:1.7;
+      max-width:780px;
+      margin:0;
+      font-size:1.08rem;
+    }
+
+    .meta{
+      margin-top:1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem 1rem;
+      color:#666;
+      font-size:.95rem;
+    }
+
+    .meta span{
+      padding:.35rem .55rem;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+    }
+
+    /* Layout blocks */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 280px;
+      gap:2rem;
+      margin-top:2rem;
+    }
+
+    @media (max-width: 860px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
+    section{
+      padding:1.5rem 0;
+      border-top:1px solid var(--line);
+    }
+
+    section:first-of-type{
+      border-top:none;
+      padding-top:0;
+    }
+
+    h2{
+      margin:0 0 .75rem 0;
+      font-size:1.4rem;
+    }
+
+    p{
+      margin:.8rem 0;
+      color:var(--muted);
+      line-height:1.85;
+      font-size:1.05rem;
+    }
+
+    ul{
+      margin:.6rem 0 .2rem 1.15rem;
+      color:var(--muted);
+      line-height:1.85;
+      font-size:1.05rem;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    a:hover{ text-decoration:underline; }
+
+    /* Sidebar */
+    .side{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:1.1rem 1rem;
+      height:fit-content;
+      position:sticky;
+      top:88px;
+      background:#fff;
+    }
+
+    .side h3{
+      margin:.1rem 0 .75rem;
+      font-size:1rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .toc{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .toc li{ margin:.55rem 0; }
+    .toc a{
+      color:#000;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.95rem;
+    }
+    .toc a:hover{ color:var(--accent); }
+
+    /* Callouts / code */
+    .callout{
+      border-left:4px solid var(--accent);
+      padding: .85rem 1rem;
+      background:#fff;
+      margin:1rem 0;
+      border-radius:10px;
+      border-top:1px solid var(--line);
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .equation{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      background:var(--codebg);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:.9rem 1rem;
+      color:var(--code);
+      overflow:auto;
+      margin:1rem 0;
+    }
+
+    .figure{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:1rem;
+      margin:1rem 0;
+      background:#fff;
+    }
+
+    .figure .ph{
+      height:180px;
+      border-radius:12px;
+      border:1px dashed #ddd;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#888;
+      font-size:.95rem;
+      background:#fcfcfc;
+    }
+
+    .caption{
+      margin-top:.7rem;
+      color:#666;
+      font-size:.95rem;
+      line-height:1.6;
+    }
+
+    footer{
+      margin-top:3rem;
+      padding-top:1.5rem;
+      border-top:1px solid var(--line);
+      color:#666;
+      font-size:.95rem;
+      line-height:1.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="expected-shot-danger.html" class="active">Expected Shot Danger</a>
+    <a href="entropy-adjusted-xg.html">Entropy-Adjusted xG</a>
+    <a href="goalkeeper-value-model.html">Goalkeeper Value Model</a>
+    <a href="set-piece-model.html">Set Piece Model</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Work with me</a>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Expected Shot Danger</h1>
+      <p class="sub">
+        Expected Shot Danger (xSD) is a shot-based probability framework designed to capture “how dangerous was this attempt?”
+        without throwing away valuable information from blocked shots. It’s built as a practical alternative to pure xG:
+        closer in spirit to “danger creation” than “goal forecasting,” while still staying probabilistic.
+      </p>
+
+      <div class="meta">
+        <span>Shot-based probability model</span>
+        <span>Pre-shot + post-shot components</span>
+        <span>Includes blocked shots</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Main content -->
+      <div>
+        <section id="overview">
+          <h2>What the model is trying to measure</h2>
+          <p>
+            Traditional expected goals (xG) is excellent at answering “what is the chance this shot becomes a goal?”
+            But football analysis often needs something slightly different: a way to value the danger of an attempt even when
+            it doesn’t become a shot on target — and especially when it gets blocked.
+          </p>
+
+          <div class="callout">
+            <strong>Idea:</strong> treat shot danger as a two-step process — first, does the attempt become on target;
+            second, if it’s on target, how likely is it to become a goal?
+          </div>
+        </section>
+
+        <section id="why-not-xg">
+          <h2>Why not just use xG?</h2>
+          <p>
+            xG is outcome-focused: it assigns value based on goals. That’s perfect for many use-cases, but it can understate
+            danger in situations where the attempt is prevented (blocked) despite coming from a prime location or context.
+          </p>
+          <ul>
+            <li><strong>Blocked shots:</strong> often reflect defensive positioning and pressure, not a lack of attacking threat.</li>
+            <li><strong>Danger vs. outcome:</strong> a good defense can reduce outcomes while still conceding repeated danger.</li>
+            <li><strong>Link to attacking process:</strong> valuing “attempt danger” can complement possession/value models.</li>
+          </ul>
+        </section>
+
+        <section id="data">
+          <h2>Data and setup</h2>
+          <p>
+            The model assumes access to event data with XY locations and shot qualifiers (body part, assist type, technique,
+            play type, deflection flags, etc.). The exact provider doesn’t matter as long as those signals are consistently available.
+          </p>
+          <p>
+            A key design choice is to treat <strong>blocked shots</strong> as first-class attempts, rather than discarding them.
+            That’s one of the main ways Expected Shot Danger differs from a standard xG pipeline.
+          </p>
+        </section>
+
+        <section id="framework">
+          <h2>The framework</h2>
+          <p>
+            Expected Shot Danger uses a two-stage probability structure. Conceptually, it mirrors how a goal happens:
+            an attempt must first be directed toward the target, and only then can it beat the goalkeeper.
+          </p>
+
+          <div class="equation">
+            Expected Shot Danger (xSD) = P(on target) × P(goal | on target)
+          </div>
+
+          <p>
+            This creates two complementary views:
+          </p>
+          <ul>
+            <li><strong>Pre-shot danger:</strong> the chance the attempt becomes on target (accuracy + context).</li>
+            <li><strong>Post-shot danger:</strong> the chance an on-target shot becomes a goal (placement/quality vs. keeper).</li>
+          </ul>
+        </section>
+
+        <section id="features">
+          <h2>Features (what goes in)</h2>
+          <p>
+            The model blends contextual qualifiers with physics-style spatial features.
+            In practice, the most useful signals tend to come from:
+          </p>
+          <ul>
+            <li><strong>Context:</strong> body part, technique (volley/chip/etc.), play type (open play/counter/set piece/penalty), assist type, deflection indicators.</li>
+            <li><strong>Spatial:</strong> distance-to-goal, angle-to-goal, and engineered variants of distance/angle.</li>
+            <li><strong>Attempt class:</strong> on target / off target / blocked / goal (depending on stage labels).</li>
+          </ul>
+        </section>
+
+        <section id="evaluation">
+          <h2>Training and evaluation</h2>
+          <p>
+            Because probability models can overfit to a single league/season, xSD is best trained on a broad sample across
+            seasons and competitions (where available). Evaluation should focus on ranking quality and calibration, not just raw accuracy.
+          </p>
+          <p>
+            A common diagnostic is ROC-AUC for each stage (on-target classifier; goal-given-on-target classifier), alongside calibration plots
+            to ensure predicted probabilities behave sensibly across bins.
+          </p>
+
+          <div class="figure">
+            <div class="ph">Placeholder: ROC-AUC / calibration visual</div>
+            <div class="caption">
+              Add your own evaluation figure here (e.g., AUC comparison for stage 1 vs stage 2, plus calibration).
+            </div>
+          </div>
+        </section>
+
+        <section id="applications">
+          <h2>What you can do with it</h2>
+          <p>
+            Once xSD is computed for every attempt, you can use it the same way you’d use xG — but with extra leverage on
+            situations where teams generate threat that gets denied before a clean shot reaches goal.
+          </p>
+
+          <ul>
+            <li><strong>Team profiles:</strong> separate “creates danger” from “turns danger into goals.”</li>
+            <li><strong>Player evaluation:</strong> attackers (attempt selection + accuracy) and finishers (post-shot conversion).</li>
+            <li><strong>Blocked-shot analysis:</strong> quantify how much danger defenses are actually stopping via blocks.</li>
+            <li><strong>Shot maps:</strong> compare pre-shot vs post-shot danger spatially.</li>
+          </ul>
+
+          <div class="figure">
+            <div class="ph">Placeholder: pre-shot vs post-shot shot map</div>
+            <div class="caption">
+              Replace this placeholder with a pair of shot maps (pre-shot danger vs post-shot danger).
+            </div>
+          </div>
+
+          <div class="figure">
+            <div class="ph">Placeholder: blocked vs unblocked distribution</div>
+            <div class="caption">
+              A simple distribution plot can show how blocked attempts carry meaningful danger values (unlike many xG implementations).
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <p>
+            This page is an original write-up of my Expected Shot Danger approach, inspired by my own modeling notes and a public
+            discussion of xSD-style frameworks. If you’d like to collaborate or request a demo notebook / sample visuals,
+            head to <a href="contact.html">Work with me</a>.
+          </p>
+        </footer>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="side">
+        <h3>On this page</h3>
+        <ol class="toc">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#why-not-xg">Why not xG?</a></li>
+          <li><a href="#data">Data</a></li>
+          <li><a href="#framework">Framework</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#evaluation">Training & evaluation</a></li>
+          <li><a href="#applications">Applications</a></li>
+        </ol>
+
+        <div class="callout" style="margin-top:1rem;">
+          <strong>Tip:</strong> when you publish visuals, export them as SVG or high-res PNG and drop them into an <code>assets/</code>
+          folder, then replace the placeholders with <code>&lt;img&gt;</code> tags.
+        </div>
+      </aside>
+    </div>
+  </main>
+
+</body>
+</html>
