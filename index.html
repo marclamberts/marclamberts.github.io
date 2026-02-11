@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | My GitHub Page</title>
+
   <style>
     body {
       margin: 0;
@@ -18,7 +19,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 1.8rem;
-      padding: 1rem 1rem;
+      padding: 1rem;
       border-bottom: 2px solid #eee;
       background-color: #fff;
       font-weight: 700;
@@ -39,43 +40,66 @@
 
     nav a:hover,
     nav a.active {
-      color: #e36f1e; /* FiveThirtyEight orange accent */
+      color: #e36f1e;
     }
 
-    /* Main Content */
+    /* Main Layout */
     main {
-      max-width: 700px;
+      max-width: 900px;
       margin: 4rem auto;
-      text-align: center;
       padding: 0 1rem;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    /* Model Tiles */
+    .model {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid #eee;
+      align-items: center;
     }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #555;
-      max-width: 600px;
-      margin: 1.2rem auto;
+    .model:last-child {
+      border-bottom: none;
     }
 
-    a {
-      color: #e36f1e;
+    .model h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .model h2 a {
+      color: #000;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .model h2 a:hover {
+      color: #e36f1e;
+    }
+
+    .model p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      .model {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigation Menu -->
+  <!-- Navigation -->
   <nav>
     <a href="index.html" class="active">Home</a>
     <a href="expected-shot-danger.html">Expected Shot Danger</a>
@@ -87,35 +111,49 @@
     <a href="contact.html">Work with me</a>
   </nav>
 
-  <!-- Home Page Content -->
+  <!-- Tiles -->
   <main>
-    <h1>Welcome to My Site</h1>
 
-    <p>
-      I’m a curious mind who loves exploring how data, design, and storytelling intersect.
-      This site is where I share my work, experiments, and ideas — inspired by the clarity and depth
-      of places like <strong>FiveThirtyEight</strong>.
-    </p>
+    <section class="model">
+      <h2>
+        <a href="expected-shot-danger.html">Expected Shot Danger</a>
+      </h2>
+      <p>
+        A shot-quality model that captures not just location, but context — including pressure,
+        defensive positioning, and shot dynamics — to better estimate true scoring danger.
+      </p>
+    </section>
 
-    <p>
-      Whether I’m building a visualization, writing about an idea, or analyzing patterns,
-      I’m always looking for better ways to understand the world through numbers and narrative.
-    </p>
+    <section class="model">
+      <h2>
+        <a href="entropy-adjusted-xg.html">Entropy-Adjusted xG</a>
+      </h2>
+      <p>
+        An extension of traditional expected goals that accounts for uncertainty and variability
+        in shooting outcomes, rewarding shots that create higher defensive entropy.
+      </p>
+    </section>
 
-    <p>
-      My work focuses on four main projects:
-      <strong>Expected Shot Danger</strong>,
-      <strong>Entropy-Adjusted Expected Goals (xG)</strong>,
-      <strong>Goalkeeper Value Model</strong>,
-      and a <strong>Set Piece Model</strong>.
-    </p>
+    <section class="model">
+      <h2>
+        <a href="goalkeeper-value-model.html">Goalkeeper Value Model</a>
+      </h2>
+      <p>
+        A framework for isolating goalkeeper impact by comparing post-shot outcomes against
+        expectation, separating shot-stopping skill from team defensive effects.
+      </p>
+    </section>
 
-    <p>
-      Take a look around:
-      learn more <a href="about.html">about me</a>,
-      see what I’ve been <a href="portfolio.html">working on</a>,
-      or <a href="contact.html">get in touch</a> if you’d like to collaborate.
-    </p>
+    <section class="model">
+      <h2>
+        <a href="set-piece-model.html">Set Piece Model</a>
+      </h2>
+      <p>
+        A possession- and delivery-aware model evaluating the quality and threat of set pieces,
+        from initial structure through second-ball and rebound phases.
+      </p>
+    </section>
+
   </main>
 
 </body>
