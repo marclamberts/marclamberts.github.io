@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | My GitHub Page</title>
+  <title>Goalkeeper Value Model | My GitHub Page</title>
 
   <style>
     body {
       margin: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #fff;
+      background: #fff;
       color: #222;
     }
 
-    /* Navigation Bar */
     nav {
       display: flex;
       justify-content: center;
@@ -21,11 +20,11 @@
       gap: 1.8rem;
       padding: 1rem;
       border-bottom: 2px solid #eee;
-      background-color: #fff;
       font-weight: 700;
       letter-spacing: 0.05em;
       position: sticky;
       top: 0;
+      background: #fff;
       z-index: 10;
     }
 
@@ -33,9 +32,7 @@
       text-decoration: none;
       color: #000;
       text-transform: uppercase;
-      transition: color 0.2s ease;
       font-size: 0.85rem;
-      white-space: nowrap;
     }
 
     nav a:hover,
@@ -43,116 +40,216 @@
       color: #e36f1e;
     }
 
-    /* Main Layout */
     main {
       max-width: 900px;
-      margin: 4rem auto;
+      margin: 3rem auto 5rem;
       padding: 0 1rem;
     }
 
-    /* Model Tiles */
-    .model {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 2rem;
-      padding: 2rem 0;
-      border-bottom: 1px solid #eee;
-      align-items: center;
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.6rem;
     }
 
-    .model:last-child {
-      border-bottom: none;
+    h2 {
+      margin-top: 2.5rem;
+      font-size: 1.6rem;
     }
 
-    .model h2 {
-      margin: 0;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #000;
-    }
-
-    .model h2 a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    .model h2 a:hover {
-      color: #e36f1e;
-    }
-
-    .model p {
-      margin: 0;
+    p, li {
       font-size: 1.05rem;
-      line-height: 1.7;
+      line-height: 1.9;
       color: #555;
     }
 
-    /* Mobile */
-    @media (max-width: 700px) {
-      .model {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-      }
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .formula {
+      background: #fafafa;
+      border-left: 4px solid #e36f1e;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      font-weight: 600;
+    }
+
+    .image-note {
+      font-style: italic;
+      color: #888;
+      margin: 1rem 0;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="expected-shot-danger.html">Expected Shot Danger</a>
-    <a href="entropy-adjusted-xg.html">Entropy-Adjusted xG</a>
-    <a href="goalkeeper-value-model.html">Goalkeeper Value Model</a>
-    <a href="set-piece-model.html">Set Piece Model</a>
-    <a href="contact.html">Work with me</a>
-  </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="expected-shot-danger.html">Expected Shot Danger</a>
+  <a href="entropy-adjusted-xg.html">Entropy-Adjusted xG</a>
+  <a href="goalkeeper-value-model.html" class="active">Goalkeeper Value Model</a>
+  <a href="set-piece-model.html">Set Piece Model</a>
+  <a href="about.html">About</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Work with me</a>
+</nav>
 
-  <!-- Tiles -->
-  <main>
+<main>
 
-    <section class="model">
-      <h2>
-        <a href="expected-shot-danger.html">Expected Shot Danger</a>
-      </h2>
-      <p>
-        A shot-quality model that captures not just location, but context — including pressure,
-        defensive positioning, and shot dynamics — to better estimate true scoring danger.
-      </p>
-    </section>
+<h1>Creating an Actionable Goalkeeper Value Model</h1>
 
-    <section class="model">
-      <h2>
-        <a href="entropy-adjusted-xg.html">Entropy-Adjusted xG</a>
-      </h2>
-      <p>
-        An extension of traditional expected goals that accounts for uncertainty and variability
-        in shooting outcomes, rewarding shots that create higher defensive entropy.
-      </p>
-    </section>
+<p>
+I am a very chaotic person by nature, and I need structure to make sure everything works right.
+This makes me thrive. But when the structure isn’t good enough, projects can stay on the shelf
+for a long time. One of these projects was the Goalkeeper Value Model (GVM). Not anymore.
+I finished it — and I’m very happy with it.
+</p>
 
-    <section class="model">
-      <h2>
-        <a href="goalkeeper-value-model.html">Goalkeeper Value Model</a>
-      </h2>
-      <p>
-        A framework for isolating goalkeeper impact by comparing post-shot outcomes against
-        expectation, separating shot-stopping skill from team defensive effects.
-      </p>
-    </section>
+<h2>Introduction</h2>
 
-    <section class="model">
-      <h2>
-        <a href="set-piece-model.html">Set Piece Model</a>
-      </h2>
-      <p>
-        A possession- and delivery-aware model evaluating the quality and threat of set pieces,
-        from initial structure through second-ball and rebound phases.
-      </p>
-    </section>
+<p>
+Goalkeepers are underrepresented in data studies. When they are evaluated, it is often only
+in relation to attackers — how good is the goalkeeper at preventing goals? What was the
+difficulty of the shot faced? These are questions tied to scoring metrics.
+</p>
 
-  </main>
+<p>
+But goalkeeping is much more than shot-stopping. Distribution, leaving the line, reflexes,
+ball handling, sweeping — these are all measurable aspects. With the right distinctions,
+we can build new metrics, scores, and models that properly evaluate goalkeeper performance.
+</p>
+
+<h2>Data Collection</h2>
+
+<p>
+The data used is Opta/StatsPerform event data from the 2024–2025 Serie A season,
+collected on August 18th, 2025.
+</p>
+
+<p>
+Working with Opta data requires careful preparation. Qualifiers must be used to extract
+endX and endY coordinates. Events and qualifiers are crucial for mapping goalkeeper actions.
+Only goalkeepers with a minimum of 900 minutes are included to ensure data stability.
+</p>
+
+<h2>Aim</h2>
+
+<p>
+The aim is to show what on-ball event data can do for goalkeeper analysis and to build
+a model that quickly communicates goalkeeper performance across matches and seasons.
+</p>
+
+<h2>Theoretical Framework</h2>
+
+<p>
+The model creates five scores:
+</p>
+
+<ul>
+  <li>Shot-stopping</li>
+  <li>Leaving the line</li>
+  <li>Distribution</li>
+  <li>Ball handling</li>
+  <li>Set piece involvement</li>
+</ul>
+
+<p>
+Every action is assigned to a category and given a value. These category values form
+the features of the overall model.
+</p>
+
+<h2>Methodology — Threat-Based Value</h2>
+
+<p>
+The model is built on a custom expected threat grid assigning a threat value to every
+location on the pitch.
+</p>
+
+<div class="formula">
+Goalkeeper Event Value = Threat Before Action − Threat After Action
+</div>
+
+<p>
+Positive values reduce danger. Negative values increase opponent threat.
+</p>
+
+<h3>1. Shot-Stopping</h3>
+<p>
+Measured by threat change from shot to outcome. Clean saves score higher than
+rebounds. Conceded goals score negatively.
+</p>
+
+<h3>2. Distribution</h3>
+<p>
+Measured by xT change from pass start to end. Forward progressive passes are rewarded.
+Turnovers are penalised.
+</p>
+
+<h3>3. Leaving the Line</h3>
+<p>
+Sweeping and claiming crosses are valued based on threat neutralised.
+</p>
+
+<h3>4. Ball Handling</h3>
+<p>
+Secure catches are rewarded. Spills and rebounds are penalised.
+</p>
+
+<h2>Final Product</h2>
+
+<p>
+All event values are normalised per phase and combined into a composite score.
+</p>
+
+<div class="formula">
+S = B + ωssV̄ss + ωdistV̄dist + ωllV̄ll + ωbhV̄bh
+</div>
+
+<p>
+This produces a 0–100 Match Score.
+</p>
+
+<p>
+The model produces:
+</p>
+
+<ul>
+  <li>Half-pitch heatmaps</li>
+  <li>Event point maps</li>
+  <li>Worst 10 distribution plot</li>
+  <li>Detailed scorecard and Excel report</li>
+</ul>
+
+<h2>Analysis</h2>
+
+<p class="image-note">[Image: Worst distribution plot example]</p>
+
+<p>
+This plot shows the 10 lowest-value distributions by the goalkeeper in a match.
+It reveals patterns that coaches can act upon.
+</p>
+
+<p class="image-note">[Image: Goalkeeper scorecard example]</p>
+
+<p>
+The scorecard combines phase scores, distribution profile, crosses claimed,
+timeflow score, phase impact, and WAR%.
+</p>
+
+<h2>Final Thoughts</h2>
+
+<p>
+This model is a strong starting point for comparing goalkeeper performance across games.
+It provides actionable insight for coaching and performance analysis.
+</p>
+
+<p>
+The next step is refining the model and packaging it into a Python tool so others
+can use it with their own event data.
+</p>
+
+</main>
 
 </body>
 </html>
