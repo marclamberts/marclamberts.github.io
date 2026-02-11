@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goalkeeper Value Model | My GitHub Page</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      padding: 1rem;
+      border-bottom: 2px solid #eee;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #e36f1e;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto 5rem;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      font-size: 1.5rem;
+    }
+
+    p, li {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #555;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .formula {
+      background: #fafafa;
+      padding: 1rem;
+      border-left: 4px solid #e36f1e;
+      margin: 1.5rem 0;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="expected-shot-danger.html">Expected Shot Danger</a>
+  <a href="entropy-adjusted-xg.html">Entropy-Adjusted xG</a>
+  <a href="goalkeeper-value-model.html" class="active">Goalkeeper Value Model</a>
+  <a href="set-piece-model.html">Set Piece Model</a>
+  <a href="about.html">About</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Work with me</a>
+</nav>
+
+<main>
+
+  <h1>Goalkeeper Value Model (GVM)</h1>
+
+  <p>
+    Most goalkeeper metrics focus almost exclusively on shot-stopping. Saves, save percentage,
+    post-shot xG minus goals conceded — all valuable, but incomplete. A goalkeeper’s influence on a
+    match starts long before a shot is taken and continues long after.
+  </p>
+
+  <p>
+    The Goalkeeper Value Model is designed to measure the total impact a goalkeeper has on
+    preventing and creating threat using only event data. It evaluates how a goalkeeper changes
+    the probability landscape of a possession through distribution, positioning, sweeping actions,
+    handling, and shot-stopping.
+  </p>
+
+  <h2>1. Data</h2>
+
+  <p>
+    The model uses raw Opta/StatsPerform event data with XY coordinates and qualifiers.
+    Only goalkeepers with sufficient minutes are evaluated to ensure stability in the metrics.
+  </p>
+
+  <h2>2. Core Idea</h2>
+
+  <p>
+    Every goalkeeper action changes the likelihood that a team will concede or create danger.
+    Using an expected threat grid, we measure how much each action increases or decreases
+    this threat.
+  </p>
+
+  <div class="formula">
+    Goalkeeper Value = Threat Before Action − Threat After Action
+  </div>
+
+  <p>
+    Positive values indicate actions that reduce danger. Negative values indicate actions that
+    increase opponent threat.
+  </p>
+
+  <h2>3. Performance Phases</h2>
+
+  <p>The model separates goalkeeper performance into five measurable phases:</p>
+
+  <ul>
+    <li><strong>Shot-stopping</strong> — value gained from preventing goals and controlling rebounds.</li>
+    <li><strong>Distribution</strong> — value from moving the ball into more threatening areas for the team.</li>
+    <li><strong>Leaving the line</strong> — sweeping actions and proactive interventions.</li>
+    <li><strong>Ball handling</strong> — secure claims versus spills that create danger.</li>
+    <li><strong>Set piece involvement</strong> — influence during defensive set-piece situations.</li>
+  </ul>
+
+  <h2>4. Methodology</h2>
+
+  <p>
+    For each goalkeeper event, we map the start and end location onto an expected threat grid.
+    The difference between the two becomes the event value.
+  </p>
+
+  <p>
+    These values are aggregated per phase and normalized by event counts to avoid volume bias.
+  </p>
+
+  <h2>5. Aggregation</h2>
+
+  <p>
+    Phase scores are combined into a composite score that reflects overall goalkeeper impact.
+    This can be applied on a match, season, or career level.
+  </p>
+
+  <div class="formula">
+    GVM Score = Weighted Sum of Phase Values → Normalized to 0–100 scale
+  </div>
+
+  <h2>6. What This Reveals</h2>
+
+  <p>
+    This model highlights goalkeeper qualities that traditional metrics miss:
+  </p>
+
+  <ul>
+    <li>Which goalkeepers actively improve team build-up</li>
+    <li>Which goalkeepers prevent danger before shots occur</li>
+    <li>Which goalkeepers create problems with poor handling or distribution</li>
+    <li>How different goalkeepers profile stylistically</li>
+  </ul>
+
+  <h2>7. Applications</h2>
+
+  <p>
+    The model can be visualised through heatmaps, event maps, and phase scorecards to
+    identify strengths, weaknesses, and tactical fit.
+  </p>
+
+  <h2>Final Thoughts</h2>
+
+  <p>
+    Goalkeeping is not a single-skill role. By quantifying how goalkeepers influence threat
+    throughout possessions, the Goalkeeper Value Model provides a more complete evaluation
+    of performance using only event data.
+  </p>
+
+</main>
+
+</body>
+</html>
