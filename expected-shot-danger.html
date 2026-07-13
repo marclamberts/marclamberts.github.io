@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Expected Shot Danger | My GitHub Page</title>
+  <title>Expected Shot Danger | Marc Lamberts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 
   <style>
     :root{
-      --accent:#e36f1e;
-      --text:#222;
-      --muted:#555;
-      --faint:#777;
-      --line:#eee;
+      --accent:#0b57d0;
+      --text:#111;
+      --muted:#444;
+      --faint:#767676;
+      --line:#ddd;
       --bg:#fff;
       --code:#111;
       --codebg:#fafafa;
@@ -19,40 +24,7 @@
     }
 
     body{
-      margin:0;
-      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-
-    /* Navigation */
-    nav{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:1.8rem;
-      padding:1rem;
-      border-bottom:2px solid var(--line);
-      background:#fff;
-      font-weight:700;
-      letter-spacing:.05em;
-      position:sticky;
-      top:0;
-      z-index:10;
-    }
-
-    nav a{
-      text-decoration:none;
-      color:#000;
-      text-transform:uppercase;
-      transition:color .2s ease;
-      font-size:.85rem;
-      white-space:nowrap;
-    }
-
-    nav a:hover,
-    nav a.active{
-      color:var(--accent);
+      font-family:"Tinos","Times New Roman",Times,serif;
     }
 
     /* Page */
@@ -92,7 +64,7 @@
     .meta span{
       padding:.35rem .55rem;
       border:1px solid var(--line);
-      border-radius:999px;
+      border-radius:0;
       background:#fff;
     }
 
@@ -154,7 +126,7 @@
     /* Sidebar */
     .side{
       border:1px solid var(--line);
-      border-radius:16px;
+      border-radius:0;
       padding:1.1rem 1rem;
       height:fit-content;
       position:sticky;
@@ -188,7 +160,7 @@
       margin-top:1rem;
       padding:.9rem 1rem;
       border:1px solid var(--line);
-      border-radius:14px;
+      border-radius:0;
       background:#fff;
       color:#444;
       line-height:1.75;
@@ -201,7 +173,7 @@
       padding:.9rem 1rem;
       background:#fff;
       margin:1.1rem 0;
-      border-radius:12px;
+      border-radius:0;
       border-top:1px solid var(--line);
       border-right:1px solid var(--line);
       border-bottom:1px solid var(--line);
@@ -213,7 +185,7 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
       background:var(--codebg);
       border:1px solid var(--line);
-      border-radius:14px;
+      border-radius:0;
       padding:.95rem 1rem;
       color:var(--code);
       overflow:auto;
@@ -229,7 +201,7 @@
 
     .figure{
       border:1px solid var(--line);
-      border-radius:16px;
+      border-radius:0;
       padding:1rem;
       margin:1rem 0;
       background:#fff;
@@ -237,7 +209,7 @@
 
     .figure .ph{
       min-height:190px;
-      border-radius:12px;
+      border-radius:0;
       border:1px dashed #ddd;
       display:flex;
       align-items:center;
@@ -275,17 +247,18 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="expected-shot-danger.html" class="active">Expected Shot Danger</a>
-    <a href="entropy-adjusted-xg.html">Entropy-Adjusted xG</a>
-    <a href="goalkeeper-value-model.html">Goalkeeper Value Model</a>
-    <a href="set-piece-model.html">Set Piece Model</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Work with me</a>
-  </nav>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-title">Marc Lamberts</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <header>
@@ -731,7 +704,7 @@
           <strong>Replacing placeholders:</strong><br />
           Export your figures to <code>assets/</code> and swap each placeholder with an image tag like:
           <div class="equation" style="margin:.7rem 0 0;">
-            &lt;img src="assets/roc_auc_single_league.png" alt="ROC-AUC single league" style="width:100%; border-radius:12px;" /&gt;
+            &lt;img src="assets/roc_auc_single_league.png" alt="ROC-AUC single league" style="width:100%; border-radius:0;" /&gt;
           </div>
         </div>
       </aside>

@@ -4,93 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Marc Lamberts</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #fff;
-      color: #222;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      border-bottom: 2px solid #eee;
-      background-color: #fff;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav a {
-      text-decoration: none;
-      color: #000;
-      text-transform: uppercase;
-      transition: color 0.2s ease;
-    }
-    nav a:hover,
-    nav a.active {
-      color: #e36f1e;
-    }
-    main {
-      max-width: 700px;
-      margin: 4rem auto;
-      text-align: left;
-      padding: 0 1rem;
-    }
-    h1 {
-      font-size: 2.25rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #555;
-      max-width: 600px;
-      margin: 1.2rem auto;
-    }
-    a {
-      color: #e36f1e;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Work with me</a>
-  </nav>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-title">Marc Lamberts</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <main>
+  <main class="container">
     <h1>About Me</h1>
 
     <p>
-      I’m Marc Lamberts — a football recruitment & data-analysis consultant. I specialise in bridging scouting, video analysis and data modelling to support clubs in men’s and women’s football. My fascination with patterns, tactics and metrics drives my work. :contentReference[oaicite:1]{index=1}
+      I'm Marc Lamberts — a football recruitment &amp; data-analysis consultant. I specialise in
+      bridging scouting, video analysis and data modelling to support clubs in men's and women's
+      football. My fascination with patterns, tactics and metrics drives my work.
     </p>
 
     <p>
-      My career so far has taken me through roles in the Netherlands, Sweden and England. For example, I joined London City Lionesses as Recruitment Analyst Intern after stints in the Dutch men’s game and Swedish women’s top division. :contentReference[oaicite:3]{index=3}
+      My career so far has taken me through roles in the Netherlands, Sweden and England. For
+      example, I joined London City Lionesses as Recruitment Analyst Intern after stints in the
+      Dutch men's game and Swedish women's top division.
     </p>
 
     <p>
-      I write and publish regularly on topics such as set-piece value models, expected performance metrics, and talent identification in elite and emerging markets. My aim is to translate complex data into actionable insights for clubs, coaches and players. :contentReference[oaicite:4]{index=4}
+      I write and publish regularly on topics such as set-piece value models, expected performance
+      metrics, and talent identification in elite and emerging markets. My aim is to translate
+      complex data into actionable insights for clubs, coaches and players.
     </p>
 
     <p>
-      Whether you’re looking to strengthen your recruitment pipeline, build a data-driven scouting workflow, or collaborate on a performance-analysis project, I’m always open to new opportunities. Let’s explore how we can work together.
+      Whether you're looking to strengthen your recruitment pipeline, build a data-driven scouting
+      workflow, or collaborate on a performance-analysis project, I'm always open to new
+      opportunities. Let's explore how we can work together.
     </p>
 
     <p>
-      You can <a href="contact.html">get in touch here</a> if you’d like to connect.
+      You can <a href="contact.html">get in touch here</a> if you'd like to connect, or read my
+      <a href="research.html">research</a>.
     </p>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Home</a> ·
+        <a href="research.html">Research</a> ·
+        <a href="portfolio.html">Portfolio</a> ·
+        <a href="contact.html">Contact</a>
+      </p>
+    </footer>
   </main>
 
 </body>

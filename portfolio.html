@@ -4,228 +4,148 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Marc Lamberts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+
   <style>
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #fff;
-      color: #222;
+    .role-list{ list-style:none; margin:0; padding:0; }
+    .role-item{
+      padding:1.3rem 0;
+      border-top:1px solid var(--rule-faint);
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:.3rem 1.5rem;
     }
-
-    /* Navigation Bar */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      border-bottom: 2px solid #eee;
-      background-color: #fff;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #000;
-      text-transform: uppercase;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #e36f1e;
-    }
-
-    /* Layout */
-    main {
-      max-width: 1000px;
-      margin: 4rem auto;
-      padding: 0 1rem;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2.25rem;
-      margin-bottom: 2rem;
-    }
-
-    p.intro {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 3rem;
-      line-height: 1.7;
-    }
-
-    /* Card grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      border: 1px solid #eee;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
-      background-color: #fff;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .card img {
-      width: 100%;
-      height: 150px;
-      object-fit: contain;
-      background-color: #fafafa;
-      padding: 1rem;
-    }
-
-    .card-content {
-      padding: 1.2rem;
-    }
-
-    .card-content h2 {
-      font-size: 1.2rem;
-      margin: 0 0 0.6rem;
-      color: #333;
-    }
-
-    .card-content p {
-      font-size: 0.95rem;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #e36f1e;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    .role-item:first-child{ border-top:none; padding-top:.25rem; }
+    .role-item h3{ margin:0; font-size:1.05rem; }
+    .role-item .role-title{ color:var(--faint); font-style:italic; font-size:.95rem; margin-top:.2rem; }
+    .role-item p{ margin:0; }
+    @media (max-width:600px){
+      .role-item{ grid-template-columns:1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html" class="active">Portfolio</a>
-    <a href="contact.html">Work with me</a>
-  </nav>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-title">Marc Lamberts</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Main Content -->
-  <main>
+  <main class="container">
     <h1>Portfolio</h1>
-    <p class="intro">
-      A selection of my professional experience and analytical work across clubs and organisations,
-      spanning scouting, opposition analysis, and data engineering roles in both men’s and women’s football.
+
+    <p>
+      A selection of my professional experience across clubs and organisations, spanning
+      scouting, opposition analysis, and data engineering roles in both men's and women's
+      football.
     </p>
 
-    <div class="grid">
+    <ul class="role-list">
 
-      <!-- London City Lionesses -->
-      <div class="card">
-        <img src="londoncitylionesses.png" alt="London City Lionesses logo">
-        <div class="card-content">
-          <h2>London City Lionesses</h2>
-          <p>Recruitment Analyst Intern — supporting player scouting, opposition reports,
-             and performance data processes in the FA Women’s Championship.</p>
+      <li class="role-item">
+        <div>
+          <h3>London City Lionesses</h3>
+          <p class="role-title">Recruitment Analyst Intern</p>
         </div>
-      </div>
+        <p>Supporting player scouting, opposition reports, and performance data processes in
+          the FA Women's Championship.</p>
+      </li>
 
-      <!-- VVV-Venlo -->
-      <div class="card">
-        <img src="vvvvenlo.png" alt="VVV-Venlo logo">
-        <div class="card-content">
-          <h2>VVV-Venlo</h2>
-          <p>Scouting and data analysis within the Dutch men’s professional system — integrating
-             data insights into player identification and recruitment workflows.</p>
+      <li class="role-item">
+        <div>
+          <h3>VVV-Venlo</h3>
+          <p class="role-title">Scouting &amp; Data Analysis</p>
         </div>
-      </div>
+        <p>Integrating data insights into player identification and recruitment workflows in
+          the Dutch men's professional system.</p>
+      </li>
 
-      <!-- Linköping FC -->
-      <div class="card">
-        <img src="linkoping.png" alt="Linköping FC logo">
-        <div class="card-content">
-          <h2>Linköping FC</h2>
-          <p>Opposition scout and analyst in the Swedish Damallsvenskan — creating
-             tactical breakdowns and data reports to support match preparation.</p>
+      <li class="role-item">
+        <div>
+          <h3>Linköping FC</h3>
+          <p class="role-title">Opposition Scout &amp; Analyst</p>
         </div>
-      </div>
+        <p>Creating tactical breakdowns and data reports to support match preparation in the
+          Swedish Damallsvenskan.</p>
+      </li>
 
-      <!-- KNVB -->
-      <div class="card">
-        <img src="knvb.png" alt="KNVB logo">
-        <div class="card-content">
-          <h2>KNVB</h2>
-          <p>Contributed to scouting methodology and data-driven analysis
-             with the Royal Netherlands Football Association.</p>
+      <li class="role-item">
+        <div>
+          <h3>KNVB</h3>
+          <p class="role-title">Scouting &amp; Data Contributor</p>
         </div>
-      </div>
+        <p>Contributed to scouting methodology and data-driven analysis with the Royal
+          Netherlands Football Association.</p>
+      </li>
 
-      <!-- Slavia Prague -->
-      <div class="card">
-        <img src="slaviaprague.png" alt="Slavia Prague logo">
-        <div class="card-content">
-          <h2>Slavia Prague</h2>
-          <p>Data Engineer — building analytical tools and visualizations to support
-             recruitment and performance workflows in top-flight European football.</p>
+      <li class="role-item">
+        <div>
+          <h3>Slavia Prague</h3>
+          <p class="role-title">Data Engineer</p>
         </div>
-      </div>
+        <p>Building analytical tools and visualizations to support recruitment and performance
+          workflows in top-flight European football.</p>
+      </li>
 
-      <!-- KAA Gent -->
-      <div class="card">
-        <img src="kaagent.png" alt="KAA Gent logo">
-        <div class="card-content">
-          <h2>KAA Gent</h2>
-          <p>Scouting Analyst — responsible for integrating data models into player
-             recruitment and opposition analysis within the Belgian Pro League.</p>
+      <li class="role-item">
+        <div>
+          <h3>KAA Gent</h3>
+          <p class="role-title">Scouting Analyst</p>
         </div>
-      </div>
+        <p>Integrating data models into player recruitment and opposition analysis within the
+          Belgian Pro League.</p>
+      </li>
 
-      <!-- DC United -->
-      <div class="card">
-        <img src="dcunited.png" alt="DC United logo">
-        <div class="card-content">
-          <h2>D.C. United</h2>
-          <p>Scouting Analyst — delivering scouting and data insights to support
-             recruitment strategy and performance evaluation in MLS.</p>
+      <li class="role-item">
+        <div>
+          <h3>D.C. United</h3>
+          <p class="role-title">Scouting Analyst</p>
         </div>
-      </div>
+        <p>Delivering scouting and data insights to support recruitment strategy and
+          performance evaluation in MLS.</p>
+      </li>
 
-      <!-- Charlotte FC -->
-      <div class="card">
-        <img src="charlottefc.png" alt="Charlotte FC logo">
-        <div class="card-content">
-          <h2>Charlotte FC</h2>
-          <p>Opposition Analyst — producing pre-match analysis, tactical reports, and
-             opposition data profiles to inform match preparation in Major League Soccer.</p>
+      <li class="role-item">
+        <div>
+          <h3>Charlotte FC</h3>
+          <p class="role-title">Opposition Analyst</p>
         </div>
-      </div>
+        <p>Producing pre-match analysis, tactical reports, and opposition data profiles to
+          inform match preparation in Major League Soccer.</p>
+      </li>
 
-      <!-- USC -->
-      <div class="card">
-        <img src="usc.png" alt="University of Southern California logo">
-        <div class="card-content">
-          <h2>University of Southern California</h2>
-          <p>Data Analyst — supporting player performance analytics and research projects
-             within collegiate-level football environments.</p>
+      <li class="role-item">
+        <div>
+          <h3>University of Southern California</h3>
+          <p class="role-title">Data Analyst</p>
         </div>
-      </div>
+        <p>Supporting player performance analytics and research projects within collegiate-level
+          football environments.</p>
+      </li>
 
-    </div>
+    </ul>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Home</a> ·
+        <a href="research.html">Research</a> ·
+        <a href="about.html">About</a> ·
+        <a href="contact.html">Contact</a>
+      </p>
+    </footer>
   </main>
+
 </body>
 </html>

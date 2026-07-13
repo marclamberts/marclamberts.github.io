@@ -1,0 +1,198 @@
+/* Shared academic design system — Marc Lamberts */
+
+:root{
+  --text:#111;
+  --muted:#444;
+  --faint:#767676;
+  --rule:#111;
+  --rule-faint:#ddd;
+  --link:#0b57d0;
+  --bg:#fff;
+  --codebg:#fafafa;
+}
+
+*{ box-sizing:border-box; }
+
+html, body{ background:var(--bg); color:var(--text); }
+
+body{
+  margin:0;
+  font-family:"Tinos","Times New Roman",Times,serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------- Site header / nav ---------- */
+
+.site-header{
+  border-bottom:1px solid var(--rule);
+  background:var(--bg);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.site-header-inner{
+  max-width:760px;
+  margin:0 auto;
+  padding:1.1rem 1.25rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:.75rem 1.5rem;
+}
+
+.site-title{
+  font-family:"Tinos","Times New Roman",Times,serif;
+  font-weight:700;
+  font-size:1.05rem;
+  font-variant-caps:small-caps;
+  letter-spacing:.03em;
+  color:var(--text);
+  text-decoration:none;
+}
+
+.site-nav{
+  display:flex;
+  gap:1.35rem;
+  flex-wrap:wrap;
+}
+
+.site-nav a{
+  font-size:.95rem;
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  padding-bottom:2px;
+}
+
+.site-nav a:hover,
+.site-nav a.active{
+  color:var(--text);
+  border-bottom-color:var(--link);
+}
+
+/* ---------- Page container & typography ---------- */
+
+.container{
+  max-width:700px;
+  margin:0 auto;
+  padding:3.5rem 1.25rem 5rem;
+}
+
+h1{
+  font-size:2.1rem;
+  line-height:1.25;
+  margin:0 0 .6rem;
+  font-weight:700;
+}
+
+h2{
+  font-size:1.35rem;
+  margin:2.4rem 0 .85rem;
+  padding-bottom:.4rem;
+  border-bottom:1px solid var(--rule-faint);
+  font-weight:700;
+}
+
+h3{
+  font-size:1.1rem;
+  margin:1.6rem 0 .5rem;
+  font-weight:700;
+}
+
+p{
+  color:var(--muted);
+  font-size:1.05rem;
+  margin:1rem 0;
+  line-height:1.75;
+}
+
+ul, ol{
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.75;
+  margin:1rem 0 1rem 1.3rem;
+}
+
+li{ margin:.4rem 0; }
+
+a{
+  color:var(--link);
+  text-decoration:none;
+}
+a:hover{ text-decoration:underline; }
+
+.kicker{
+  color:var(--faint);
+  font-size:.92rem;
+  letter-spacing:.02em;
+}
+
+.formula, .equation{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+  background:var(--codebg);
+  border:1px solid var(--rule-faint);
+  padding:1rem 1.1rem;
+  margin:1.3rem 0;
+  color:var(--text);
+  font-size:.95rem;
+  overflow:auto;
+}
+
+/* ---------- Research listing (used on research.html and home preview) ---------- */
+
+.research-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.research-item{
+  padding:1.4rem 0;
+  border-top:1px solid var(--rule-faint);
+}
+
+.research-item:first-child{ border-top:none; padding-top:.25rem; }
+
+.research-item h3{
+  margin:0 0 .3rem;
+  font-size:1.15rem;
+}
+
+.research-item h3 a{
+  color:var(--text);
+}
+.research-item h3 a:hover{ color:var(--link); }
+
+.research-item p{
+  margin:.3rem 0 0;
+  font-size:.98rem;
+}
+
+.research-item .status{
+  display:inline-block;
+  margin-top:.4rem;
+  font-size:.85rem;
+  color:var(--faint);
+  font-style:italic;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer{
+  margin-top:4rem;
+  padding-top:1.5rem;
+  border-top:1px solid var(--rule-faint);
+  color:var(--faint);
+  font-size:.92rem;
+  line-height:1.8;
+}
+
+@media (max-width:600px){
+  .site-header-inner{ flex-direction:column; align-items:flex-start; gap:.6rem; }
+  .container{ padding:2.5rem 1.1rem 4rem; }
+}

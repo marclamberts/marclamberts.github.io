@@ -48,6 +48,39 @@
       padding: var(--margin);
     }
 
+    /* Site nav (kept minimal to preserve the paper feel) */
+    .site-header{
+      border-bottom: 1px solid var(--rule);
+    }
+    .site-header-inner{
+      max-width: calc(var(--page-width) - (2 * var(--margin)));
+      margin: 0 auto;
+      padding: 1rem var(--margin);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .6rem 1.5rem;
+    }
+    .site-title{
+      font-weight: 700;
+      font-variant-caps: small-caps;
+      letter-spacing: .03em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .site-nav{ display:flex; gap: 1.25rem; flex-wrap: wrap; }
+    .site-nav a{
+      font-size: .92rem;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav a:hover, .site-nav a.active{
+      color: var(--text);
+      border-bottom-color: var(--link);
+    }
+
     /* Title block */
     header.paper-title{
       text-align: center;
@@ -184,6 +217,19 @@
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-title">Marc Lamberts</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="page">
     <header class="paper-title">
       <h1>
@@ -904,6 +950,10 @@
         <li>Worville, T. (2017). Expected goals in context. <i>FiveThirtyEight</i>.</li>
       </ol>
     </section>
+
+    <footer style="margin-top:2.5rem; padding-top:1rem; border-top:1px solid var(--rule); color:var(--muted); font-size:.92rem;">
+      <a href="research.html">&larr; Back to Research</a> &middot; <a href="index.html">Home</a>
+    </footer>
   </main>
 </body>
 </html>
