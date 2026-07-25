@@ -1,143 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | My GitHub Page</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: #fff;
-      color: #222;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.8rem;
-      padding: 1rem;
-      border-bottom: 2px solid #eee;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      position: sticky;
-      top: 0;
-      background: #fff;
-      z-index: 10;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #000;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #e36f1e;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 0 1rem;
-    }
-
-    .model {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 2rem;
-      padding: 2.2rem 0;
-      border-bottom: 1px solid #eee;
-      align-items: center;
-    }
-
-    .model:last-child {
-      border-bottom: none;
-    }
-
-    .model h2 {
-      margin: 0;
-      font-size: 1.4rem;
-      font-weight: 700;
-    }
-
-    .model h2 a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    .model h2 a:hover {
-      color: #e36f1e;
-    }
-
-    .model p {
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #555;
-    }
-
-    @media (max-width: 700px) {
-      .model {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marc Lamberts</title>
+<meta name="description" content="Marc Lamberts — football recruitment & data analysis consultant." />
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<nav>
-  <a href="index.html" class="active">Home</a>
-  <a href="expected-shot-danger.html">Expected Shot Danger</a>
-  <a href="entropy-adjusted-xg.html">Entropy-Adjusted xG</a>
-  <a href="goalkeeper-value-model.html">Goalkeeper Value Model</a>
-  <a href="set-piece-model.html">Set Piece Model</a>
-  <a href="about.html">About</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="contact.html">Work with me</a>
-</nav>
+<header class="site-header">
+  <span class="site-header__name">Marc Lamberts</span>
+  <nav class="site-header__nav">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
 <main>
 
-  <section class="model">
-    <h2><a href="expected-shot-danger.html">Expected Shot Danger</a></h2>
+  <section class="hero">
+    <h1>Marc Lamberts</h1>
+    <p class="hero__tagline">Football recruitment &amp; data-analysis consultant.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About</h2>
     <p>
-      A two-stage probability model measuring how dangerous a shot is before and after it reaches the target,
-      incorporating blocked shots and contextual shot features beyond traditional xG.
+      I bridge scouting, video analysis and data modelling to support clubs in men's
+      and women's football. My work sits at the intersection of patterns, tactics
+      and metrics — turning raw data into decisions clubs can act on.
+    </p>
+    <p>
+      My career has taken me through the Netherlands, Sweden, England and the
+      United States, working across professional recruitment, opposition analysis
+      and data engineering roles.
     </p>
   </section>
 
-  <section class="model">
-    <h2><a href="entropy-adjusted-xg.html">Entropy-Adjusted xG</a></h2>
-    <p>
-      An extension of expected goals that values uncertainty and defensive disruption,
-      rewarding shots that create higher entropy for the defending team.
-    </p>
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <ul class="experience">
+      <li>
+        <span class="experience__role">Recruitment Analyst Intern</span>
+        <span class="experience__org">London City Lionesses</span>
+      </li>
+      <li>
+        <span class="experience__role">Opposition Analyst</span>
+        <span class="experience__org">Charlotte FC</span>
+      </li>
+      <li>
+        <span class="experience__role">Scouting Analyst</span>
+        <span class="experience__org">D.C. United</span>
+      </li>
+      <li>
+        <span class="experience__role">Scouting Analyst</span>
+        <span class="experience__org">KAA Gent</span>
+      </li>
+      <li>
+        <span class="experience__role">Data Engineer</span>
+        <span class="experience__org">Slavia Prague</span>
+      </li>
+      <li>
+        <span class="experience__role">Scouting Methodology</span>
+        <span class="experience__org">KNVB</span>
+      </li>
+      <li>
+        <span class="experience__role">Opposition Scout &amp; Analyst</span>
+        <span class="experience__org">Linköping FC</span>
+      </li>
+      <li>
+        <span class="experience__role">Scouting &amp; Data Analysis</span>
+        <span class="experience__org">VVV-Venlo</span>
+      </li>
+      <li>
+        <span class="experience__role">Data Analyst</span>
+        <span class="experience__org">University of Southern California</span>
+      </li>
+    </ul>
   </section>
 
-  <section class="model">
-    <h2><a href="goalkeeper-value-model.html">Goalkeeper Value Model</a></h2>
+  <section id="contact" class="section">
+    <h2>Contact</h2>
     <p>
-      A threat-based framework quantifying goalkeeper impact across shot-stopping,
-      distribution, sweeping, and ball handling using event data.
+      Open to conversations about recruitment analytics, scouting workflows and
+      performance data. Reach out any time.
     </p>
-  </section>
-
-  <section class="model">
-    <h2><a href="set-piece-model.html">Set Piece Model</a></h2>
-    <p>
-      A model evaluating the structure, delivery, and second-phase danger of set pieces,
-      measuring how teams create and concede threat from dead-ball situations.
-    </p>
+    <ul class="links">
+      <li><a href="mailto:marclamberts@outlook.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/marclamberts/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://marclamberts.medium.com/" target="_blank" rel="noopener">Medium</a></li>
+    </ul>
   </section>
 
 </main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Marc Lamberts</p>
+</footer>
 
 </body>
 </html>
