@@ -1,104 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Marc Lamberts</title>
-<meta name="description" content="Marc Lamberts — football recruitment & data analysis consultant." />
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marc Lamberts — Data Portfolio</title>
+  <meta name="description" content="Data analysis and visualisation across sport, science, weather and politics by Marc Lamberts." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Marc Lamberts, home"><span class="wordmark__mark">ML</span><span>Marc Lamberts</span></a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
 
-<header class="site-header">
-  <span class="site-header__name">Marc Lamberts</span>
-  <nav class="site-header__nav">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Data analyst · Researcher · Storyteller</p>
+      <h1 id="hero-title">Finding the signal<br />in complex data.</h1>
+      <p class="hero__intro">A portfolio of analytical work spanning professional sport, earth science, space exploration and public life.</p>
+      <a class="hero__link" href="#work">Explore the work <span aria-hidden="true">↓</span></a>
+      <div class="hero__orbit" aria-hidden="true"><span class="hero__orbit-line"></span><span class="hero__dot hero__dot--one"></span><span class="hero__dot hero__dot--two"></span><span class="hero__dot hero__dot--three"></span></div>
+    </section>
 
-<main>
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <p class="eyebrow">Selected fields</p>
+        <h2 id="work-title">Data work, across domains</h2>
+        <p>Different questions. Different datasets. The same commitment to clear, useful analysis.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-card--football"><span class="project-card__number">01</span><div><p class="project-card__type">Sport · Performance</p><h3>Football</h3><p>Recruitment, scouting, opposition analysis and performance data.</p></div><span class="project-card__arrow" aria-hidden="true">↗</span></article>
+        <article class="project-card"><span class="project-card__number">02</span><div><p class="project-card__type">Sport · Performance</p><h3>Basketball</h3><p>Player evaluation, lineup patterns and spatial performance.</p></div><span class="project-card__arrow" aria-hidden="true">↗</span></article>
+        <article class="project-card"><span class="project-card__number">03</span><div><p class="project-card__type">Sport · Performance</p><h3>Baseball</h3><p>Pitch, plate and player data translated into visual stories.</p></div><span class="project-card__arrow" aria-hidden="true">↗</span></article>
+        <article class="project-card"><span class="project-card__number">04</span><div><p class="project-card__type">Sport · Performance</p><h3>Ice Hockey</h3><p>Team tendencies, player impact and game-state analysis.</p></div><span class="project-card__arrow" aria-hidden="true">↗</span></article>
+        <article class="project-card project-card--nasa"><span class="project-card__number">05</span><div><p class="project-card__type">Science · Space</p><h3>NASA</h3><p>Exploring open space and earth-observation datasets.</p></div><span class="project-card__arrow" aria-hidden="true">↗</span></article>
+        <article class="project-card project-card--knmi"><span class="project-card__number">06</span><div><p class="project-card__type">Science · Climate</p><h3>KNMI</h3><p>Weather, climate and atmospheric data from the Netherlands.</p></div><span class="project-card__arrow" aria-hidden="true">↗</span></article>
+        <article class="project-card project-card--politics"><span class="project-card__number">07</span><div><p class="project-card__type">Society · Public data</p><h3>Politics</h3><p>Electoral patterns and public data made easier to understand.</p></div><span class="project-card__arrow" aria-hidden="true">↗</span></article>
+      </div>
+    </section>
 
-  <section class="hero">
-    <h1>Marc Lamberts</h1>
-    <p class="hero__tagline">Football recruitment &amp; data-analysis consultant.</p>
-  </section>
+    <section id="about" class="about" aria-labelledby="about-title">
+      <p class="eyebrow">About</p>
+      <div class="about__content">
+        <h2 id="about-title">Analysis should lead to understanding.</h2>
+        <div class="about__copy"><p>I work where data, domain knowledge and communication meet. My approach combines rigorous analysis with clear visual storytelling—turning raw information into patterns people can see and decisions they can act on.</p><p>The subjects change, from a football pitch to the atmosphere, but the goal stays the same: ask a precise question and build an honest answer.</p></div>
+      </div>
+    </section>
 
-  <section id="about" class="section">
-    <h2>About</h2>
-    <p>
-      I bridge scouting, video analysis and data modelling to support clubs in men's
-      and women's football. My work sits at the intersection of patterns, tactics
-      and metrics — turning raw data into decisions clubs can act on.
-    </p>
-    <p>
-      My career has taken me through the Netherlands, Sweden, England and the
-      United States, working across professional recruitment, opposition analysis
-      and data engineering roles.
-    </p>
-  </section>
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title">Have a question hidden in your data?</h2>
+      <a class="contact__email" href="mailto:marclamberts@outlook.com">Let’s talk <span aria-hidden="true">↗</span></a>
+      <div class="contact__links"><a href="https://www.linkedin.com/in/marclamberts/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://marclamberts.medium.com/" target="_blank" rel="noopener noreferrer">Medium</a></div>
+    </section>
+  </main>
 
-  <section id="experience" class="section">
-    <h2>Experience</h2>
-    <ul class="experience">
-      <li>
-        <span class="experience__role">Recruitment Analyst Intern</span>
-        <span class="experience__org">London City Lionesses</span>
-      </li>
-      <li>
-        <span class="experience__role">Opposition Analyst</span>
-        <span class="experience__org">Charlotte FC</span>
-      </li>
-      <li>
-        <span class="experience__role">Scouting Analyst</span>
-        <span class="experience__org">D.C. United</span>
-      </li>
-      <li>
-        <span class="experience__role">Scouting Analyst</span>
-        <span class="experience__org">KAA Gent</span>
-      </li>
-      <li>
-        <span class="experience__role">Data Engineer</span>
-        <span class="experience__org">Slavia Prague</span>
-      </li>
-      <li>
-        <span class="experience__role">Scouting Methodology</span>
-        <span class="experience__org">KNVB</span>
-      </li>
-      <li>
-        <span class="experience__role">Opposition Scout &amp; Analyst</span>
-        <span class="experience__org">Linköping FC</span>
-      </li>
-      <li>
-        <span class="experience__role">Scouting &amp; Data Analysis</span>
-        <span class="experience__org">VVV-Venlo</span>
-      </li>
-      <li>
-        <span class="experience__role">Data Analyst</span>
-        <span class="experience__org">University of Southern California</span>
-      </li>
-    </ul>
-  </section>
-
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>
-      Open to conversations about recruitment analytics, scouting workflows and
-      performance data. Reach out any time.
-    </p>
-    <ul class="links">
-      <li><a href="mailto:marclamberts@outlook.com">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/marclamberts/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://marclamberts.medium.com/" target="_blank" rel="noopener">Medium</a></li>
-    </ul>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <p>&copy; 2026 Marc Lamberts</p>
-</footer>
-
+  <footer class="site-footer"><span>© 2026 Marc Lamberts</span><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
